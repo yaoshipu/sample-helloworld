@@ -1,9 +1,3 @@
-#### 准备工作
-
-- 本地安装 Docker ：参考 <a href="https://docs.docker.com/" target="_blank">Docker 官方文档</a>，选择适合操作系统的版本。
-- 获得示例的源代码 ：`git clone git@github.com:kirk-enterprise/sample-helloworld.git`
-- 示例代码提供 go 和 nodejs 版本，前者的编译需要本地安装 go，参考<a href="https://golang.org/dl" target="_blank"> golang 环境下载</a>。
-
 #### go 版本
 
 helloworld.go 是一个简单的 go WEB 服务程序。
@@ -38,13 +32,13 @@ func main() {
 FROM ubuntu
 ADD helloworld /
 CMD ["/helloworld"]
-[ go ]$ docker build -t kirk-test/helloworld-go .
+[ go ]$ docker build -t helloworld-go .
 ```
 
 使用 `docker run` 运行容器后程序会监听 8000 端口，以 curl 或浏览器可以访问。
 
 ```bash
-[ go ]$ docker run -d -p 8000:8000 kirk-test/helloworld-go
+[ go ]$ docker run -d -p 8000:8000 helloworld-go
 7a5a78195f2b577cfc5beb086fe4f67694944289b8fecc0f1c7766a2821b2c13
 [ go ]$ curl localhost:8000
 Hello world from my Go program!
@@ -79,13 +73,13 @@ console.log("Server running at http://127.0.0.1:8000/");
 FROM node
 ADD helloworld.js /
 CMD ["node", "helloworld.js"]
-[ nodejs ]$ docker build -t kirk-test/helloworld-node .
+[ nodejs ]$ docker build -t helloworld-node .
 ```
 
 使用 `docker run` 运行容器后程序会监听 8000 端口，以 curl 或浏览器可以访问。
 
 ```bash
-[ nodejs ]$ docker run -d -p 8000:8000 kirk-test/helloworld-node
+[ nodejs ]$ docker run -d -p 8000:8000 helloworld-node
 9f77df5feb5ff76ab02792962a8bae4f118fe90a5febf7226ae403a3283a823f
 [ nodejs ]$ curl localhost:8000
 Hello world from my Node program!
