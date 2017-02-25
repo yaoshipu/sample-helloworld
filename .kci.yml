@@ -6,7 +6,6 @@ pipeline:
         image:  index.qiniu.com/kci/plugin_git
         remote_url: https://github.com/yaoshipu/sample-helloworld.git
         path: /workspace/sample-helloworld
-        ref: refs/heads/master
         depth: 1
     
     build:
@@ -14,17 +13,23 @@ pipeline:
         commands:
         - cd /workspace/sample-helloworld
         - make build
+        - echo $SERVICE_NAME
+        - echo $SPOCK_TAG
+        - mkdir -p _package
+        - cp /workspace/sample-helloworld/go/${SERVICE_NAME} _package/
+        - tar -czvf ${SERVICE_NAME}-${SPOCK_TAG}.tar.gz _package/
+        - ls
         
     index.qiniu.com/kci/plugin_kodo:
         bucket: release-candidates
-        source: /workspace/sample-helloworld/go/helloworld
-        target: /test
+        source: /workspace/sample-helloworld/${SERVICE_NAME}-${SPOCK_TAG}.tar.gz
+        target: /demo
         delete: false
         zone: 0
 
     index.qiniu.com/kci/plugin_docker:
-        repo:  spocktest/helloworld
-        tag:   latest
+        repo:  spocktest/demo
+        tag:   ${SPOCK_TAG}
         workdir:      /workspace/sample-helloworld/go
         dockerfile:   Dockerfile
         when:
