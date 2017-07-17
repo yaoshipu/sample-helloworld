@@ -6,6 +6,5 @@ pipeline:
     build:
         image: golang:1.7
         commands:
-        - ls /workspace/sample-helloworld
         - echo $DRONE_WORKSPACE
         - ls /drone/src/github.com/yaoshipu/sample-helloworld/pull/3
