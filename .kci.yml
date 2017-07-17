@@ -1,9 +1,10 @@
 workspace:
     base: /workspace
 pipeline:
+    clone:
+        image: plugins/git
+        remote: https://github.com/yaoshipu/sample-helloworld.git
     build:
         image: golang:1.7
         commands:
-        - cd /workspace/sample-helloworld
-        - make build
         - ls
