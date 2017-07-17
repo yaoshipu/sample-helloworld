@@ -1,8 +1,9 @@
 pipeline:
     clone:
         image: plugins/git
-        remote: https://github.com/yaoshipu/sample-helloworld.git
-        path: /workspace/sample-helloworld
+        remote: https://github.com/qbox/base.git
+        depth: 1
+
     build:
         image: golang:1.7
         commands:
