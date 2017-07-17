@@ -7,4 +7,4 @@ pipeline:
         image: golang:1.7
         commands:
         - echo $DRONE_WORKSPACE
-        - ls /drone/src/github.com/yaoshipu/sample-helloworld/pull/3
+        - find .
