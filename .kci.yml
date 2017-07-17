@@ -7,3 +7,8 @@ pipeline:
         image: golang:1.7
         commands:
         - echo $DRONE_WORKSPACE
+        - ls /drone
+        - ls /drone/src
+        - ls /drone/src/github.com
+        - ls /drone/src/github.com/yaoshipu
+        - ls /drone/src/github.com/yaoshipu/sample-helloworld
