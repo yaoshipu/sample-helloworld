@@ -1,10 +1,9 @@
-workspace:
-    base: /workspace
 pipeline:
     clone:
         image: plugins/git
         remote: https://github.com/yaoshipu/sample-helloworld.git
+        path: /workspace/sample-helloworld
     build:
         image: golang:1.7
         commands:
-        - ls
+        - echo $DRONE_WORKSPACE
