@@ -1,8 +1,7 @@
 pipeline:
     clone:
         image: index.qiniu.com/qiniu-spock/git-plugin
-        secrets: [ REGISTRY_USERNAME, REGISTRY_PASSWORD ]
-        remote url: https://github.com/qbox/base.git
+        remote_url: https://github.com/qbox/base.git
         depth: 1
 
     build:
