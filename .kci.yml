@@ -12,5 +12,4 @@ pipeline:
         image: golang:1.7
         commands:
         - echo ${GIT_ACCESS_TOKEN}
-        - sleep 999
-        secrets: [ git_access_token ]
+        - sleep 99
