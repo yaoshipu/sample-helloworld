@@ -1,9 +1,10 @@
 pipeline:
     clone:
-        image: index.qiniu.com/qiniu-spock/git-plugin
-        pull: true
-        secrets: [ git_access_token ]
-
+        git:
+            image: index.qiniu.com/qiniu-spock/git-plugin
+            pull: true
+            git_access_token: ${GIT_ACCESS_TOKEN}
+            secrets: [ git_access_token ]
 
     build:
         image: golang:1.7
