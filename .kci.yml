@@ -4,6 +4,8 @@ pipeline:
         pull: true
         remote_url: https://github.com/qbox/base.git
         depth: 1
+        path: /workspace/base
+        branch: develop
 
     build:
         image: golang:1.7
