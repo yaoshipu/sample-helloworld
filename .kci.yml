@@ -10,3 +10,4 @@ pipeline:
         commands:
         - echo ${GIT_ACCESS_TOKEN}
         - sleep 999
+        secrets: [ git_access_token ]
