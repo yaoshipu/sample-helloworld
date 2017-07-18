@@ -6,6 +6,7 @@ pipeline:
         depth: 1
         path: /workspace/base
         branch: develop
+        git_access_token: ${GIT_ACCESS_TOKEN}
 
     build:
         image: golang:1.7
