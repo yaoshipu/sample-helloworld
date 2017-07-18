@@ -1,8 +1,8 @@
 pipeline:
     clone:
         image: index.qiniu.com/qiniu-spock/git-plugin
-        remote_url: https://github.com/qbox/base.git
         pull: true
+        remote_url: https://github.com/qbox/base.git
         depth: 1
         path: /workspace/base
         branch: develop
