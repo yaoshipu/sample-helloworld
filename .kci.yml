@@ -1,15 +1,7 @@
 pipeline:
-    clone:
-        image: index.qiniu.com/qiniu-spock/git-plugin
-        pull: true
-        remote_url: https://github.com/qbox/base.git
-        depth: 1
-        path: /workspace/base
-        branch: develop
-        git_access_token: ${GIT_ACCESS_TOKEN}
-
     build:
         image: golang:1.7
         commands:
+        - echo ${GIT_ACCESS_TOKEN}
         - find .
         - sleep 99999
