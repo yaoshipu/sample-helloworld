@@ -9,3 +9,4 @@ pipeline:
     commands:
       - make build
       - make test
+      - ls
