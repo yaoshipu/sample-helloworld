@@ -1,0 +1,10 @@
+clone:
+  sample-helloworld.git:
+    image: index.qiniu.com/spock/git-plugin:cs-proxy
+    depth: 1
+
+pipeline:
+  build:
+    image: index.qiniu.com/spock/golang:1.7
+    commands:
+      - make build
