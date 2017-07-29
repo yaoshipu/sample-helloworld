@@ -8,3 +8,4 @@ pipeline:
     image: index.qiniu.com/spock/golang:1.7
     commands:
       - make build
+      - make test
