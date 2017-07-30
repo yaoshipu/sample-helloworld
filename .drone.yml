@@ -11,4 +11,4 @@ pipeline:
       - make build
       - make test
       - printenv
-      - if [[ $CI_COMMIT_MESSAGE =~ .abc. ]]; then echo "It's there!" fi
+      - if [[ $CI_COMMIT_MESSAGE =~ .*SVC=abc.* ]]; then echo "found" ;fi;
