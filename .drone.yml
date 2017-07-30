@@ -13,5 +13,5 @@ pipeline:
       - cat .drone.yml
     when:
       matrix:
-        COMMIT_MESSAGE: abc
+        COMMIT_MESSAGE: *SVC=abc*
     
