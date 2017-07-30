@@ -11,5 +11,4 @@ pipeline:
       - make build
       - make test
     when:
-      matrix:
-        CI_COMMIT_MESSAGE: "abc"
+      message: "abc"
