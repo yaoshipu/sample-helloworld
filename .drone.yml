@@ -10,7 +10,6 @@ pipeline:
     commands:
       - make build
       - make test
-      - cat .drone.yml
     when:
       matrix:
-        COMMIT_MESSAGE: "SVC=abc"
+        CI_COMMIT_MESSAGE: "SVC=abc"
