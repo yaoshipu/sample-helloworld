@@ -12,4 +12,4 @@ pipeline:
       - make test
     when:
       matrix:
-        CI_COMMIT_MESSAGE: "SVC=abc"
+        CI_COMMIT_MESSAGE: "abc"
