@@ -2,6 +2,7 @@ clone:
   sample-helloworld.git:
     image: index.qiniu.com/spock/git-plugin:cs-proxy
     depth: 1
+    debug: true
 
 pipeline:
   build:
@@ -11,5 +12,5 @@ pipeline:
       - make test
       - cat .drone.yml
      when:
-      commit_message: *svc=abc*
+      commit_message: abc
     
