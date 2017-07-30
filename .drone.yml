@@ -10,5 +10,5 @@ pipeline:
     commands:
       - make build
       - make test
-    when:
-      message: "svc"
+      - printenv
+      - if [[ $CI_COMMIT_MESSAGE =~ .abc. ]]; then echo "It's there!" fi
