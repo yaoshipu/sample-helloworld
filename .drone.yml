@@ -9,4 +9,7 @@ pipeline:
     commands:
       - make build
       - make test
-      - ls
+      - cat .drone.yml
+     when:
+      commit_message: *svc=abc*
+    
