@@ -12,5 +12,6 @@ pipeline:
       - make test
       - cat .drone.yml
     when:
-      commit_message: abc
+      matrix:
+        COMMIT_MESSAGE: abc
     
