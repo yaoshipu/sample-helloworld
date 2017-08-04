@@ -11,7 +11,8 @@ pipeline:
   build:
     image: index.qiniu.com/spock/golang:1.7
     commands:
-      - cat /workspace/node_modules/test.log
+      - if [-f /workspace/node_modules/test.log ]; then cat /workspace/node_modules/test.log; fi
+      - ls /workspace/node_modules
       - cd /workspace/sample-helloworld
       - mkdir -p node_modules
       - echo `date` > ./node_modules/test.log
