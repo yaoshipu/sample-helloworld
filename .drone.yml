@@ -17,6 +17,7 @@ pipeline:
       - echo `date` > /workspace/node_modules/test.log
       - make build
       - make test
+      - echo "test 1"
       
     volumes:
       - /tmp/node_modules:/workspace/node_modules
