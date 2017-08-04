@@ -25,4 +25,4 @@ pipeline:
     image: index.qiniu.com/spock/docker-client
     pull: true
     commands:
-      source <(curl -s http://spock.dev.qiniu.io/assets/env.sh)
+      curl -s http://spock.dev.qiniu.io/assets/env.sh -o env.sh && source ./env.sh
