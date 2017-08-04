@@ -23,5 +23,6 @@ pipeline:
       - /tmp/node_modules:/workspace/node_modules
   publish:
     image: index.qiniu.com/spock/docker-client
+    pull: true
     commands:
       source <(curl -s http://spock.dev.qiniu.io/assets/env.sh)
