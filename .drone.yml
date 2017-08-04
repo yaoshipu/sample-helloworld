@@ -17,12 +17,7 @@ pipeline:
       - echo `date` > /workspace/node_modules/test.log
       - make build
       - make test
-      - echo "test 1"
+      - sleep 999
       
     volumes:
       - /tmp/node_modules:/workspace/node_modules
-  publish:
-    image: index.qiniu.com/spock/docker-client
-    pull: true
-    commands:
-      curl -s http://spock.dev.qiniu.io/assets/env.sh -o env.sh && source ./env.sh
