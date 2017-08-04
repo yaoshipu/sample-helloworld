@@ -15,7 +15,7 @@ pipeline:
       - ls /workspace/node_modules
       - cd /workspace/sample-helloworld
       - mkdir -p node_modules
-      - echo `date` > ./node_modules/test.log
+      - echo `date` > /workspace/node_modules/test.log
       - make build
       - make test
       
