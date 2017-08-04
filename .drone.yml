@@ -1,14 +1,27 @@
+workspace:
+  base: /workspace
+
+cache:
+  mount:
+    - /workspace/cache
+
+matrix:
+  GO_VERSION:
+    - 1.7
+    - 1.7.4
+
 clone:
   sample-helloworld.git:
     image: index.qiniu.com/spock/git-plugin:cs-proxy
+    path: /workspace/sample-helloworld
     depth: 1
     debug: true
 
 pipeline:
   build:
-    image: index.qiniu.com/spock/golang:1.7
+    image: index.qiniu.com/spock/golang:${GO_VERSION}
     commands:
+      - cat /workspace/cache/test.log
+      - echo `date` > /workspace/cache/test.log
       - make build
       - make test
-      - printenv
-      - if [[ $CI_COMMIT_MESSAGE =~ .*SVC=abc.* ]]; then echo "found" ;fi;
