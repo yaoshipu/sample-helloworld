@@ -19,7 +19,7 @@ clone:
 
 pipeline:
   build:
-    image: index.qiniu.com/spock/golang:${GO_VERSION}
+    image: index.qiniu.com/spock/golang:$GO_VERSION
     commands:
       - cat /workspace/cache/test.log
       - echo `date` > /workspace/cache/test.log
