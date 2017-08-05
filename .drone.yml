@@ -17,7 +17,6 @@ pipeline:
       - echo `date` > /workspace/test/test.log
       - make build
       - make test
-      - sleep 999
       
     volumes:
       - /cache/test:/workspace/test
