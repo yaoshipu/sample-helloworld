@@ -11,13 +11,13 @@ pipeline:
   build:
     image: index.qiniu.com/spock/golang:1.7
     commands:
-      - if [ -f /workspace/node_modules/test.log ]; then cat /workspace/node_modules/test.log; fi
+      - if [ -f /workspace/cache/test.log ]; then cat /workspace/cache/test.log; fi
       - cd /workspace/sample-helloworld
       - mkdir -p node_modules
-      - echo `date` > /workspace/node_modules/test.log
+      - echo `date` > /workspace/cache/test.log
       - make build
       - make test
       - sleep 999
       
     volumes:
-      - /tmp/node_modules:/workspace/node_modules
+      - /cache/node_modules:/workspace/node_modules
