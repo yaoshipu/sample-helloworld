@@ -5,7 +5,6 @@ clone:
   sample-helloworld.git:
     image: index.qiniu.com/spock/git-plugin:cs-proxy
     path: /workspace/sample-helloworld
-    depth: 1
 
 pipeline:
   build:
