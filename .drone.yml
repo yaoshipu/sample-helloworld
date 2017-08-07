@@ -32,7 +32,7 @@ pipeline:
     key: /sample-helloworld/demo
     delete: true
     debug: true
-    secrets: [BUCKET_USER, BUCEKT_PWD]
+    secrets: [BUCKET_USER, BUCKET_PWD]
 
     
 
