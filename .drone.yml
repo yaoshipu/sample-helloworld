@@ -11,11 +11,11 @@ pipeline:
     image: index.qiniu.com/spock/golang:1.7
     commands:
       - cd /workspace/sample-helloworld
-      - ls
+      - mkdir -p cache
       - make build
       - make test
     volumes:
-      - /cache/sample-helloworld/go:/workspace/sample-helloworld/go
+      - /cache/sample-helloworld/cache:/workspace/sample-helloworld/cache
 
   publish:
     image: index.qiniu.com/spock/docker-client
