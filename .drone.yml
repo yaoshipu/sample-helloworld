@@ -26,9 +26,6 @@ pipeline:
 
   archive:
     image: index.qiniu.com/spock/kodo-plugin
-    pipeline:
-  archive:
-    image: index.qiniu.com/spock/kodo-plugin
     access_key: $BUCKET_USER
     secret_key: $BUCEKT_PWD
     bucket: release-candidate
