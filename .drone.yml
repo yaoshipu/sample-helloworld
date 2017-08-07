@@ -28,7 +28,7 @@ pipeline:
     image: index.qiniu.com/spock/kodo-plugin
     access_key: $BUCKET_USER
     secret_key: $BUCEKT_PWD
-    bucket: release-candidate
+    bucket: release-candidates
     source: /workspace/sample-helloworld/go/demo
     key: /sample-helloworld/demo
     delete: true
