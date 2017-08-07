@@ -11,6 +11,7 @@ pipeline:
     image: index.qiniu.com/spock/golang:1.7
     commands:
       - cd /workspace/sample-helloworld
+      - ls
       - make build
       - make test
     volumes:
