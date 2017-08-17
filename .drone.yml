@@ -24,13 +24,5 @@ pipeline:
       - echo $SERVICE
       - echo $TAG
 
-  archive:
-    image: index.qiniu.com/spock/kodo-plugin
-    pull: true
-    source: /workspace/sample-helloworld/go/demo
-    key: /sample-helloworld/demo
-    delete: true
-    secrets: [BUCKET_USER, BUCKET_PWD]
-
     
 
