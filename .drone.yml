@@ -12,12 +12,13 @@ pipeline:
     commands:
       - cd /workspace/sample-helloworld
       - mkdir -p cache
-      - echo "helloworld" > /workspace/sample-helloworld/cache/test.log
+      - echo "helloworld" > /drone/cache/test.cache
+      - cat test.cache
       - make build
       - make test
     cache:
       mount:
-        - /workspace/sample-helloworld/cache
+        - /drone/cache
     #volumes:
     #  - /cache/sample-helloworld/cache:/workspace/sample-helloworld/cache
 
