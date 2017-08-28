@@ -14,8 +14,11 @@ pipeline:
       - mkdir -p cache
       - make build
       - make test
-    volumes:
-      - /cache/sample-helloworld/cache:/workspace/sample-helloworld/cache
+    cache:
+      mount:
+        - /workspace/sample-helloworld/cache
+    #volumes:
+    #  - /cache/sample-helloworld/cache:/workspace/sample-helloworld/cache
 
   publish:
     image: index.qiniu.com/spock/docker-client
