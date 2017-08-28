@@ -12,7 +12,7 @@ pipeline:
     commands:
       - cd /workspace/sample-helloworld
       - mkdir -p cache
-      - echo "helloworld" > /workspace/sample-helloworld/cache
+      - echo "helloworld" > /workspace/sample-helloworld/cache/test.log
       - make build
       - make test
     cache:
