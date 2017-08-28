@@ -11,14 +11,13 @@ pipeline:
     image: index.qiniu.com/spock/golang:1.7
     commands:
       - cd /workspace/sample-helloworld
-      - mkdir -p cache
-      - echo "helloworld" > /drone/cache/test.cache
-      - cat test.cache
+      - mkdir -p cache-test
+      - echo "helloworld" > /workspace/sample-helloworld/cache-test/test.log
       - make build
       - make test
     cache:
       mount:
-        - /drone/cache
+        - /workspace/sample-helloworld/cache-test
     #volumes:
     #  - /cache/sample-helloworld/cache:/workspace/sample-helloworld/cache
 
