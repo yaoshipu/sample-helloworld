@@ -10,6 +10,7 @@ pipeline:
   build:
     image: index.qiniu.com/spock/golang:1.7
     commands:
+      - cat /workspace/sample-helloworld/cache-test/test.log
       - cd /workspace/sample-helloworld
       - mkdir -p cache-test
       - echo "helloworld" > /workspace/sample-helloworld/cache-test/test.log
