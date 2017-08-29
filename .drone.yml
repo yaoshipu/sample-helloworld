@@ -33,4 +33,5 @@ pipeline:
     secrets: [BUCKET_USER, BUCKET_PWD]
     commands:
       - printenv
+      - ls
 
