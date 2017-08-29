@@ -29,6 +29,7 @@ pipeline:
     source: /workspace/sample-helloworld/go/demo
     key: /sample-helloworld/demo
     delete: true
+    debug: true
     secrets: [BUCKET_USER, BUCKET_PWD]
     commands:
       - echo $SERVICE
