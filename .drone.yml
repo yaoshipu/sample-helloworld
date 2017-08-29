@@ -14,7 +14,7 @@ pipeline:
       - make build
       - make test
     #volumes:
-     # - /cache/sample-helloworld/cache:/workspace/sample-helloworld/cache
+    # - /cache/sample-helloworld/cache:/workspace/sample-helloworld/cache
 
   publish:
     image: index.qiniu.com/spock/docker-client
