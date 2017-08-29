@@ -30,6 +30,3 @@ pipeline:
     key: /sample-helloworld/demo-${SERVICE}-${TAG}
     delete: true
     secrets: [BUCKET_USER, BUCKET_PWD]
-    commands:
-      - echo $SERVICE
-      - echo $TAG
