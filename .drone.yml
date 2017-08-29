@@ -25,7 +25,7 @@ pipeline:
       - curl -s http://spock.dev.qiniu.io/assets/env.sh -o env.sh && source ./env.sh
       - echo $SERVICE
       - echo $TAG
-
+  
   archive:
     image: index.qiniu.com/spock/kodo-plugin
       pull: true
@@ -34,6 +34,5 @@ pipeline:
       delete: true
       secrets: [BUCKET_USER, BUCKET_PWD]
     commands:
-      - ls
-   
+      - ls   
 
