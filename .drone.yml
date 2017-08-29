@@ -16,11 +16,8 @@ pipeline:
       - echo "helloworld" > /workspace/sample-helloworld/cache-test/test.log
       - make build
       - make test
-    cache:
-      mount:
-        - /workspace/sample-helloworld/cache-test
-    #volumes:
-    #  - /cache/sample-helloworld/cache:/workspace/sample-helloworld/cache
+    volumes:
+      - /cache/sample-helloworld/cache:/workspace/sample-helloworld/cache
 
   publish:
     image: index.qiniu.com/spock/docker-client
@@ -29,5 +26,14 @@ pipeline:
       - echo $SERVICE
       - echo $TAG
 
-    
+  archive:
+    image: index.qiniu.com/spock/kodo-plugin
+      pull: true
+      source: /workspace/sample-helloworld/go/demo
+      key: /sample-helloworld/demo
+      delete: true
+      secrets: [BUCKET_USER, BUCKET_PWD]
+    commands:
+      - ls
+   
 
