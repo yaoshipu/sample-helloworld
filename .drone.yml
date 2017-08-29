@@ -32,6 +32,5 @@ pipeline:
     debug: true
     secrets: [BUCKET_USER, BUCKET_PWD]
     commands:
-      - echo $SERVICE
-      - echo $TAG
+      - printenv
 
