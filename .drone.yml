@@ -31,5 +31,5 @@ pipeline:
     delete: true
     secrets: [BUCKET_USER, BUCKET_PWD]
     commands:
-      - ls   
+      - printenv
 
