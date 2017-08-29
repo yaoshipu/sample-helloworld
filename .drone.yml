@@ -31,5 +31,6 @@ pipeline:
     delete: true
     secrets: [BUCKET_USER, BUCKET_PWD]
     commands:
-      - printenv
+      - echo $SERVICE
+      - echo $TAG
 
