@@ -13,8 +13,8 @@ pipeline:
       - cd /workspace/sample-helloworld
       - make build
       - make test
-    # volumes:
-    # - /cache/sample-helloworld/cache:/workspace/sample-helloworld/cache
+    #volumes:
+    #- /cache/sample-helloworld/cache:/workspace/sample-helloworld/cache
 
   publish:
     image: index.qiniu.com/spock/docker-client
@@ -29,6 +29,5 @@ pipeline:
     source: /workspace/sample-helloworld/go/demo
     key: /sample-helloworld/demo-[SERVICE]-[TAG]
     delete: true
-    debug: true
     secrets: [BUCKET_USER, BUCKET_PWD]
     
