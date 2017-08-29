@@ -13,7 +13,7 @@ pipeline:
       - cd /workspace/sample-helloworld
       - make build
       - make test
-    #volumes:
+    # volumes:
     # - /cache/sample-helloworld/cache:/workspace/sample-helloworld/cache
 
   publish:
@@ -31,3 +31,4 @@ pipeline:
     delete: true
     debug: true
     secrets: [BUCKET_USER, BUCKET_PWD]
+    
