@@ -13,7 +13,7 @@ pipeline:
       - cat /workspace/sample-helloworld/cache-test/test.log
       - cd /workspace/sample-helloworld
       - mkdir -p cache-test
-      - echo "helloworld" > /workspace/sample-helloworld/cache-test/test.log
+      - echo "sample helloworld" > /workspace/sample-helloworld/cache-test/test.log
       - make build
       - make test
     volumes:
