@@ -22,6 +22,7 @@ pipeline:
       - curl -s http://spock.dev.qiniu.io/assets/env.sh -o env.sh && source ./env.sh
       - echo $SERVICE
       - echo $TAG
+      - echo Test
   
   archive:
     image: index.qiniu.com/spock/kodo-plugin
