@@ -27,7 +27,7 @@ pipeline:
     image: index.qiniu.com/spock/kodo-plugin
     pull: true
     source: /workspace/sample-helloworld/go/demo
-    key: /sample-helloworld/demo-[SERVICE]-[TAG]
+    key: /sample-helloworld/demo-{SERVICE}-{TAG}
     delete: true
     secrets: [BUCKET_USER, BUCKET_PWD]
     
