@@ -8,15 +8,12 @@ clone:
 
 pipeline:
   build:
-    image: index.qiniu.com/spock/golang:1.7
+    image: index.qiniu.com/spock/golang:${IMG_TAG}
     commands:
       - curl -s http://spock.dev.qiniu.io/assets/env.sh -o env.sh && source ./env.sh
       - cd /workspace/sample-helloworld
       - make build
       - make test
-     when:
-      matrix:
-        BUILD-FOR: "yoho"
 
   publish:
     image: index.qiniu.com/spock/docker-client
