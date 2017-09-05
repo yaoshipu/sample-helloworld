@@ -10,11 +10,13 @@ pipeline:
   build:
     image: index.qiniu.com/spock/golang:1.7
     commands:
+      - curl -s http://spock.dev.qiniu.io/assets/env.sh -o env.sh && source ./env.sh
       - cd /workspace/sample-helloworld
       - make build
       - make test
-    #volumes:
-    #- /cache/sample-helloworld/cache:/workspace/sample-helloworld/cache
+     when:
+      matrix:
+        BUILD-FOR: "yoho"
 
   publish:
     image: index.qiniu.com/spock/docker-client
