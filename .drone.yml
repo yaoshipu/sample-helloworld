@@ -5,6 +5,9 @@ clone:
   sample-helloworld.git:
     image: index.qiniu.com/spock/git-plugin:cs-proxy
     path: /workspace/sample-helloworld
+    commands: 
+      - ls
+      - cat ~/.netrc
 
 pipeline:
   build:
