@@ -6,8 +6,7 @@ clone:
     image: index.qiniu.com/spock/git-plugin:cs-proxy
     path: /workspace/sample-helloworld
     commands: 
-      - ls
-      - cat ~/.netrc
+      - pwd
 
 pipeline:
   build:
@@ -18,19 +17,19 @@ pipeline:
       - make build
       - make test
 
-  publish:
-    image: index.qiniu.com/spock/docker-client
-    commands:
-      - curl -s http://spock.dev.qiniu.io/assets/env.sh -o env.sh && source ./env.sh
-      - echo $SERVICE
-      - echo $TAG
-      - echo Test
+  #publish:
+  #  image: index.qiniu.com/spock/docker-client
+  #  commands:
+  #    - curl -s http://spock.dev.qiniu.io/assets/env.sh -o env.sh && source ./env.sh
+  #    - echo $SERVICE
+  #    - echo $TAG
+  #    - echo Test
   
-  archive:
-    image: index.qiniu.com/spock/kodo-plugin
-    pull: true
-    source: /workspace/sample-helloworld/go/demo
-    key: demo-[SERVICE]-[TAG]
-    delete: true
-    secrets: [BUCKET_USER, BUCKET_PWD]
+  #archive:
+  #  image: index.qiniu.com/spock/kodo-plugin
+  #  pull: true
+  #  source: /workspace/sample-helloworld/go/demo
+  #  key: demo-[SERVICE]-[TAG]
+  #  delete: true
+  #  secrets: [BUCKET_USER, BUCKET_PWD]
     
