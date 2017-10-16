@@ -1,3 +1,8 @@
+matrix:
+  GO_VERSION:
+    - 1.8
+    - 1.8.3
+    
 workspace:
   base: /workspace
 
@@ -8,18 +13,8 @@ clone:
 
 pipeline:
   build:
-    image: index.qiniu.com/spock/golang:1.8.3
+    image: golang:${GO_VERSION}
     commands:
-      - curl -s http://spock.dev.qiniu.io/assets/env.sh -o env.sh && source ./env.sh
       - cd /workspace/sample-helloworld
       - make build
       - make test
-  
-  #archive:
-  #  image: index.qiniu.com/spock/kodo-plugin
-  #  pull: true
-  #  source: /workspace/sample-helloworld/go/demo
-  #  key: demo-[SERVICE]-[TAG]
-  #  delete: true
-  #  secrets: [BUCKET_USER, BUCKET_PWD]
-    
