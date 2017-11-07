@@ -1,19 +1,20 @@
-matrix:
-  GO_VERSION:
-    - 1.8
-    - 1.8.3
-    
 workspace:
   base: /workspace
 
 clone:
   sample-helloworld.git:
-    image: index.qiniu.com/spock/git-plugin:cs-proxy
+    image: index.qiniu.com/spock/git-plugin:1.0.1
     path: /workspace/sample-helloworld
+
+  aslan-platform.git:
+    image: index.qiniu.com/spock/git-plugin:1.0.1
+    remote_url: git@github.com:yaoshipu/aslan-platform.git
+    branch: develop
+    path: /workspace/aslan-platform
 
 pipeline:
   build:
-    image: golang:${GO_VERSION}
+    image: golang:1.8.3
     commands:
       - cd /workspace/sample-helloworld
       - make build
